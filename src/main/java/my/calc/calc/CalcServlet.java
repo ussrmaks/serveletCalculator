@@ -74,35 +74,8 @@ public class CalcServlet extends HttpServlet {
         out.println("</form>");
 
         out.println("</body></html>");
-        if(request.getParameter("fetchdata")!=null)
-        {
-            System.out.println("Button Clicked doGet fetchdata");
-            request.setAttribute("watched", "Мурзик хочет кушац!");
-
-        }
-        if(request.getParameter("fetchdata2")!=null)
-        {
-            System.out.println("Button Clicked doGet fetchdata2");
-            request.setAttribute("watched", "Мурзик хочет кушац!");
-
-        }
     }
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
-            throws IOException {
-        resp.setContentType("text/html");
-        PrintWriter out = resp.getWriter();
-        if(req.getParameter("fetchdata")!=null)
-        {
-            System.out.println("Button Clicked doPost");
-            req.setAttribute("watched", "Мурзик хочет кушац!");
 
-        }
-        else
-        {
-            out.println("Button not clicked");
-        }
-    }
 
     @Override
     public void destroy() {
