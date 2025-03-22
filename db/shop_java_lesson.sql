@@ -53,3 +53,49 @@ CREATE TABLE OrderItems (
                             quantity INT NOT NULL,
                             price NUMERIC(10, 2) NOT NULL
 );
+-- Заполнение таблицы Categories
+INSERT INTO Categories (category_name) VALUES
+                                           ('Электроника'),
+                                           ('Одежда'),
+                                           ('Книги'),
+                                           ('Бытовая техника');
+
+-- Заполнение таблицы Suppliers
+INSERT INTO Suppliers (supplier_name, contact_name, address, phone, email) VALUES
+                                                                               ('TechSupplier', 'Иван Иванов', 'Москва, ул. Техническая, 10', '+79991234567', 'tech@example.com'),
+                                                                               ('ClothSupplier', 'Петр Петров', 'Санкт-Петербург, ул. Ткацкая, 5', '+79992345678', 'cloth@example.com'),
+                                                                               ('BookSupplier', 'Сидор Сидоров', 'Новосибирск, ул. Книжная, 3', '+79993456789', 'book@example.com');
+
+-- Заполнение таблицы Products
+INSERT INTO Products (name, description, price, category_id, supplier_id, stock_quantity) VALUES
+                                                                                              ('Смартфон', 'Мощный смартфон с OLED-экраном', 50000.00, 1, 1, 100),
+                                                                                              ('Ноутбук', 'Легкий и мощный ноутбук', 80000.00, 1, 1, 50),
+                                                                                              ('Футболка', 'Хлопковая футболка', 1500.00, 2, 2, 200),
+                                                                                              ('Джинсы', 'Классические джинсы', 3000.00, 2, 2, 150),
+                                                                                              ('Книга "Война и мир"', 'Классика русской литературы', 1000.00, 3, 3, 300),
+                                                                                              ('Микроволновая печь', 'Компактная микроволновка', 7000.00, 4, 1, 80);
+
+-- Заполнение таблицы Customers
+INSERT INTO Customers (first_name, last_name, email, phone, address) VALUES
+                                                                         ('Алексей', 'Смирнов', 'alex@example.com', '+79994567890', 'Москва, ул. Пушкина, 15'),
+                                                                         ('Мария', 'Иванова', 'maria@example.com', '+79995678901', 'Санкт-Петербург, ул. Лермонтова, 20'),
+                                                                         ('Дмитрий', 'Петров', 'dmitry@example.com', '+79996789012', 'Новосибирск, ул. Гоголя, 25');
+
+-- Заполнение таблицы Orders
+INSERT INTO Orders (customer_id, order_date, total_amount) VALUES
+                                                               (1, '2025-03-01', 51500.00),
+                                                               (2, '2025-03-05', 4500.00),
+                                                               (3, '2025-03-10', 80000.00);
+
+-- Заполнение таблицы OrderItems
+INSERT INTO OrderItems (order_id, product_id, quantity, price) VALUES
+                                                                   (1, 1, 1, 50000.00),  -- Смартфон
+                                                                   (1, 3, 1, 1500.00),   -- Футболка
+                                                                   (2, 4, 1, 3000.00),   -- Джинсы
+                                                                   (2, 5, 1, 1000.00),   -- Книга
+                                                                   (3, 2, 1, 80000.00);  -- Ноутбук
+
+ -- Просмотр таблиц
+SELECT * FROM categories
+
+SELECT * FROM customers
